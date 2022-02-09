@@ -11,6 +11,7 @@ Table of Contents
 - [Configuration files](#configuration-files)
 - [Scripts](#scripts)
 - [Reading](#reading)
+- [Development](#development)
 ---
 
 ## Requirements
@@ -56,3 +57,8 @@ To add new scripts, the following rules will be taken into consideration:
 - Respects the coding standard or enhances it
 - Has code comments
 - Has usage message
+- Function names starts with a verb
+- Variables name starts with a noun
+
+**Syntax**
+- linted with [shellcheck](https://github.com/koalaman/shellcheck/wiki/SC2039).
