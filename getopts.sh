@@ -76,6 +76,7 @@ while :; do
   shift_n=""
   opt_orig="${1}" ## save opt orig for error message to understand which opt failed
   case "${opt_orig}" in
+    --) shift 1; break;; ## stop option parsing
     --*=*) opt="${1%=*}"; opt="${opt#*--}"; arg="${1#*=}"; shift_n=1;; ## long option '--sleep=1'
     -*=*) opt="${1%=*}"; opt="${opt#*-}"; arg="${1#*=}"; shift_n=1;; ## short option '-s=1'
     --*) opt="${1#*--}"; arg="${2}";; ## long option '--sleep 1'
@@ -93,8 +94,6 @@ while :; do
     ;;
     q|quiet) quiet=1;; ## helpful messages can be omitted
     d|debug) set -x;; ## useful for debugging
-    -) shift 1; break;; ## this is '--', used to stop option parsing
-    "") break;; ## no more options, break loop
     h|help|*) usage;; ## help is calling
   esac
   ## shift as many times as demanded
