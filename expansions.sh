@@ -35,7 +35,8 @@ file_path="${folder}/file"
 
 ## lets divide the host from the port
 addr_port="127.0.0.1:80"
+#addr_port="[2001:4860:4860::8888]:53"
 ## get the port by removing everything till the last colon ':'
 port="${addr_port##*:}"
 ## get the host/addr by removing everything after the most distant colon ':'
-addr="${addr_port%%:*}"
+addr="${addr_port%:*}"
